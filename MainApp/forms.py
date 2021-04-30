@@ -1,19 +1,16 @@
 from django import forms
-from .models import Topic
-from .models import Entry
-
+from .models import Topic, Entry
 
 class TopicForm(forms.ModelForm):
-    class Meta:
+    class Meta: 
         model = Topic
-        fields = ["text"]
-        labels = {"Text": ""}
-
+        fields = ['text']
+        label = {'Text: ':''}
 
 class EntryForm(forms.ModelForm):
-    class Meta:
+    class Meta: 
         model = Entry
-        fields = ["text"]
-        labels = {"text": ""}
-
-        widgets = {"text": forms.Textarea(attrs={"cols": 80})}
+        fields = ['text']
+        label = {'Text: ':''}
+        
+        widgets = {'text': forms.Textarea(attrs={'cols':80})}
